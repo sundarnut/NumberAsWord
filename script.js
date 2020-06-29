@@ -96,7 +96,7 @@ function getFullWord(number) {
         strTens = getWord(tens);
 
         if (ones > 0) {
-            strUnits += getWord(ones);
+            strUnits = getWord(ones);
         }
     }
 
