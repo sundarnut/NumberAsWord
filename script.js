@@ -1,8 +1,18 @@
 function generateWord() {
   
     var strNumber = $("#txtNumber").val();
+    var flag = false;
 
-    if ((strNumber == "") || (isNaN(strNumber))) {
+     // Weird hack to avoid for spaces derailing isNaN
+    for (var i = 0; i < strNumber.length; i++) {
+        var c = strNumber.charAt(i);
+        if ((c < '0') || (c > '9')) {
+            flag = true;
+            break;
+        }
+    }
+
+    if ((strNumber == "") || (flag)) {
         $("#spanAnswer").html("Invalid number entered!");
         return;
     }
