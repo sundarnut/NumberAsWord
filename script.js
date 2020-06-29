@@ -21,7 +21,7 @@ function generateWord() {
     strNumber = removeLeadingZeros(strNumber);
 
     if (strNumber1 != strNumber) {
-      $("#txtNumber").val(strNumber);
+        $("#txtNumber").val(strNumber);
     }
 
     var answer = "";
@@ -83,7 +83,7 @@ function getFullWord(number) {
     if (number > 99) {
         var hundreds = parseInt(number / 100);
         strHundreds = getWord(hundreds);
-        strHundreds = strHundreds + " hundred ";
+        answer = strHundreds + " hundred ";
         number %= 100;
     }
 
@@ -99,8 +99,6 @@ function getFullWord(number) {
             strUnits = getWord(ones);
         }
     }
-
-    answer += strHundreds;
 
     if (strHundreds != "") {
         if ((strTens != "") || (strUnits != "")) {
@@ -216,9 +214,6 @@ function getSuffix(index) {
     var suffix = "";
 
     switch (index) {
-        case 1:
-            suffix = "";
-            break;
         case 2:
             suffix = " thousand ";
             break;
